@@ -217,25 +217,25 @@ function LiveList() {
         <tr>
           <th
             scope="col"
-            className="px-6 py-3 2xl:text-xl lg:text-xs font-bold text-center text-gray-500 uppercas"
+            className="px-6 py-3 2xl:text-6xl lg:text-xs font-bold text-center text-gray-500 uppercas"
           >
             Sıralama
           </th>
           <th
             scope="col"
-            className="px-6 py-3 2xl:text-xl lg:text-xs font-bold text-center text-gray-500 uppercas"
+            className="px-6 py-3 2xl:text-6xl lg:text-xs font-bold text-center text-gray-500 uppercas"
           >
             İsim
           </th>
           <th
             scope="col"
-            className="px-6 py-3 2xl:text-xl lg:text-xs font-bold text-center text-gray-500 uppercas"
+            className="px-6 py-3 2xl:text-6xl lg:text-xs font-bold text-center text-gray-500 uppercas"
           >
             Takım
           </th>
           <th
             scope="col"
-            className="px-6 py-3 2xl:text-xl lg:text-xs font-bold text-center text-gray-500 uppercas"
+            className="px-6 py-3 2xl:text-6xl lg:text-xs font-bold text-center text-gray-500 uppercas"
           >
             Satış
           </th>
@@ -252,21 +252,21 @@ function LiveList() {
             key={index}
           >
             <td className="py-3 pl-4 text-gray-500 text-center">
-              <div className=" text-lg 2xl:text-2xl xl:text-1xl lg:text-xl sm:text-xs">
+              <div className=" text-lg 2xl:text-7xl xl:text-1xl lg:text-xl sm:text-xs">
                 <div className="m-auto">
                   {index === 0 ? (
                     <GiTrophyCup
-                      className="m-auto 2xl:w-20 2xl:h-20 xl:w-9 xl:h-9 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
+                      className="m-auto 2xl:w-32 2xl:h-32 xl:w-9 xl:h-9 lg:w-32 lg:h-32 sm:w-3 sm:h-3 w-10 h-10"
                       color="gold"
                     />
                   ) : index === 1 ? (
                     <GiTrophyCup
-                      className="m-auto 2xl:w-20 2xl:h-20 xl:w-9 xl:h-9 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
+                      className="m-auto 2xl:w-32 2xl:h-32 xl:w-9 xl:h-9 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
                       color="#aeb0ae"
                     />
                   ) : index === 2 ? (
                     <GiTrophyCup
-                      className="m-auto 2xl:w-20 2xl:h-20 xl:w-9 xl:h-9 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
+                      className="m-auto 2xl:w-32 2xl:h-32 xl:w-9 xl:h-9 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
                       color="#CD7F32"
                     />
                   ) : (
@@ -275,13 +275,13 @@ function LiveList() {
                 </div>
               </div>
             </td>
-            <td className="py-3 pl-4 text-gray-500 text-center text-lg 2xl:text-2xl xl:text-1xl lg:text-xl sm:text-xs">
+            <td className="py-3 pl-4 text-gray-500 text-center text-lg 2xl:text-6xl xl:text-1xl lg:text-4xl sm:text-xs">
               {e.name}
             </td>
-            <td className="py-3 pl-4 text-gray-500 text-center text-lg 2xl:text-2xl xl:text-1xl lg:text-xl sm:text-xs">
+            <td className="py-3 pl-4 text-gray-500 text-center text-lg 2xl:text-6xl xl:text-1xl lg:text-xl sm:text-xs">
               {e.team}
             </td>
-            <td className="py-3 pl-4 text-gray-500 text-center text-lg 2xl:text-2xl xl:text-1xl lg:text-xl sm:text-xs">
+            <td className="py-3 pl-4 text-gray-500 text-center text-lg 2xl:text-6xl xl:text-1xl lg:text-xl sm:text-xs">
               {e.sales}
             </td>
           </tr>
