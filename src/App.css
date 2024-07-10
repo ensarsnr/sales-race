@@ -21,3 +21,15 @@
 	grid-area: 1 / 4 / 7 / 7;
 	
 }
+
+
+.custom-scroll {
+	overflow-y: auto;
+	max-height: 98%;
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+	scrollbar-width: none;  /* Firefox */
+  }
+  
+  .custom-scroll::-webkit-scrollbar { 
+	display: none;  /* Safari and Chrome */
+  }
