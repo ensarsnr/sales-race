@@ -1,12 +1,13 @@
 #cssportal-grid {
-    padding: 3px;
+    padding: 6px;
 	display: grid;
 	grid-template-rows: repeat(6, 1fr);
 	grid-template-columns: repeat(6, 1fr);
 	gap: 0;
 	width: 100%;
 	height: 100vh;
-    gap:2px;
+    gap:10px;
+	background-color: rgb(226, 226, 235);
 }
 #div1 {
 
@@ -33,3 +34,29 @@
   .custom-scroll::-webkit-scrollbar { 
 	display: none;  /* Safari and Chrome */
   }
+
+  /* Stil dosyasına ekleyin */
+.table-container {
+	overflow: hidden;
+	border-radius: 0.75rem; /* Tablonun genel kenarlarını yuvarlamak için */
+  }
+  
+  table {
+	border-collapse: separate;
+	border-spacing: 0;
+  }
+  
+  thead {
+	border-top-left-radius: 0.75rem;
+	border-top-right-radius: 0.75rem;
+	overflow: hidden;
+  }
+  
+  tbody tr:last-child td:first-child {
+	border-bottom-left-radius: 0.75rem;
+  }
+  
+  tbody tr:last-child td:last-child {
+	border-bottom-right-radius: 0.75rem;
+  }
+  
