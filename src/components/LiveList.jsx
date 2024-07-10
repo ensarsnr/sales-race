@@ -62,7 +62,152 @@ function LiveList() {
       name: "Deniz",
       team: "takım2",
       sales: "$5000",
-    },
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
+      {
+        name: "Deniz",
+        team: "takım2",
+        sales: "$5000",
+      },
   ];
 
   return (
@@ -101,7 +246,7 @@ function LiveList() {
           <tr
             className={
               index % 2 === 0
-                ? "bg-gradient-to-bl from-purple-300 to-purple-400"
+                ? "bg-gradient-to-bl from-pink-300 to-pink-400"
                 : "bg-white"
             }
             key={index}
@@ -111,17 +256,17 @@ function LiveList() {
                 <div className="m-auto">
                   {index === 0 ? (
                     <GiTrophyCup
-                      className="m-auto 2xl:w-20 2xl:h-20 xl:w-12 xl:h-12 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
+                      className="m-auto 2xl:w-20 2xl:h-20 xl:w-9 xl:h-9 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
                       color="gold"
                     />
                   ) : index === 1 ? (
                     <GiTrophyCup
-                      className="m-auto 2xl:w-20 2xl:h-20 xl:w-12 xl:h-12 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
+                      className="m-auto 2xl:w-20 2xl:h-20 xl:w-9 xl:h-9 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
                       color="#aeb0ae"
                     />
                   ) : index === 2 ? (
                     <GiTrophyCup
-                      className="m-auto 2xl:w-20 2xl:h-20 xl:w-12 xl:h-12 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
+                      className="m-auto 2xl:w-20 2xl:h-20 xl:w-9 xl:h-9 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
                       color="#CD7F32"
                     />
                   ) : (
