@@ -66,8 +66,9 @@ function LiveList() {
   ];
 
   return (
-    <table className=" w-full min-w-full divide-y divide-gray-200">
-      <thead className="bg-white">
+    <div className="table-container">
+    <table className="w-full min-w-full shadow divide-y divide-gray-200 rounded-lg">
+      <thead className="bg-white rounded-t-lg">
         <tr>
           <th
             scope="col"
@@ -142,6 +143,7 @@ function LiveList() {
         ))}
       </tbody>
     </table>
+  </div>
   );
 }
 
