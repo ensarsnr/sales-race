@@ -4,8 +4,6 @@ import LiveList from "./components/LiveList";
 
 function App() {
   return (
-    <>
-     
       <div id="cssportal-grid">
         <div
           className="rounded bg-info d-flex align-items-center justify-content-center"
@@ -36,7 +34,6 @@ function App() {
           </div>
         </div>
       </div>
-    </>
   );
 }
 
