@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <nav className="navbar">
+       <span className="navbar-brand ml">Navbar</span>
+      </nav>
+    <div id="cssportal-grid">
+        <div className="rounded bg-info d-flex align-items-center justify-content-center" id="div1">
+          <div className="row  w-100 h-75">
+            <div className="col d-flex align-items-center justify-content-start">
+              <div className="ml-2 text-light w-100 ">
+                <span className="h2">İsim Soyisim</span>
+              </div>
+            </div>
+            <div className="col bg-danger rounded"></div>
+          </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="rounded bg-warning" id="div2">div2</div>
+        <div className="rounded bg-danger" id="div3">
+          <div className="row w-100">
+            <div className="col-12 text-center">
+              <h1 className="text-light">Başlık</h1>
+            </div>
+            <div className="col-12 bg-success">s</div>
+          </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
