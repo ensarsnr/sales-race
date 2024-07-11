@@ -4,12 +4,12 @@ import { GiTrophyCup } from "react-icons/gi";
 function LiveList() {
   const salesList = [
     {
-      name: "Ayşe",
+      name: "Ayşe Denem",
       team: "takım1",
       sales: "$2000",
     },
     {
-      name: "Ahmet",
+      name: "Ahmet Den..",
       team: "takım2",
       sales: "$3000",
     },
@@ -246,7 +246,7 @@ function LiveList() {
           <tr
             className={
               index % 2 === 0
-                ? "bg-gradient-to-bl from-pink-300 to-pink-400"
+                ? "bg-sky-500"
                 : "bg-white"
             }
             key={index}
