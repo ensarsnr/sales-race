@@ -3,6 +3,9 @@ import "./App.css";
 import LiveList from "./components/LiveList";
 import backgroundImg from "./assets/image/Zemin.png";
 import logo from "./assets/image/Acıbadem-Health-Point-Logo-Beyaz.png";
+import Lottie from "react-lottie-player";
+import comingsoon from "./assets/anims/comingsoon.json";
+import make from "./assets/anims/make.json";
 
 function App() {
   return (
@@ -13,50 +16,45 @@ function App() {
         </span>
       </nav>
 
-      {/* <div className="grid grid-cols-2 grid-rows-8 gap-4">
-        <div className="row-span-2">
+      <div className="h-[94.5vh] grid grid-cols-2 grid-rows-8 gap-4">
+        <div className="bg-light rounded-3xl shadow row-span-2">
+          <div className="w-full p-14 text-center font-bold">
+            <span className="text-8xl">Ahmet</span>
+          </div>
+          <div className="h-4/6 flex">
+            <div className="shadow m-auto w-2/4 rounded-3xl h-5/6 bg-black">s</div>
+          </div>
         </div>
-        <div className="row-span-2 col-start-1 row-start-4">6</div>
-        <div className="row-span-2 col-start-1 row-start-7">7</div>
-        <div className="row-span-8 col-start-2 row-start-1">8</div>
-      </div> */}
-
-      <div id="cssportal-grid" className=" content">
-        <div
-          className="rounded bg-light shadow d-flex align-items-center justify-content-center"
-          id="div1"
-        >
-          <div className="row w-100 h-75">
-            <div className="col d-flex align-items-center justify-content-start">
-              <div className="ml-2 text-light w-75 text-center">
-                <span className="2xl:text-8xl xl:text-5xl lg:text-3xl md:3xl text-gray-600 font-bold">
-                  Ayşe{" "}
-                </span>
-              </div>
-            </div>
-            <div className="col bg-red-300 mr-3 rounded shadow">
-              {/* BURAYA RESİMLER GELECEK.... */}
+        <div className="bg-light rounded-3xl shadow row-span-2">
+          <div className="w-full text-center p-5 ">
+            <span className="text-8xl font-bold">Grafik</span>
+          </div>
+        </div>
+        <div className="bg-light rounded-3xl shadow row-span-2 col-start-1 row-start-5">
+          <div className="h-full w-full flex">
+            <div className="w-2/4 h-2/4  m-auto">
+              <Lottie loop animationData={comingsoon} play style={{width: 500, height: 500}} />
             </div>
           </div>
         </div>
-        <div className="rounded bg-light shadow" id="div2">
-          div2
+        <div className="bg-light rounded-3xl shadow row-span-2 col-start-1 row-start-7 text-8xl">
+        <div className="h-full w-full flex">
+            <div className="w-2/4 h-2/4  m-auto">
+              <Lottie loop animationData={make} play style={{width: 500, height: 500}} />
+            </div>
+          </div>
         </div>
-        <div className="rounded bg-light border shadow" id="div3">
-          <div className="row h-[10%] w-100">
-            <div className="col-12 text-center flex ml-3 rounded">
-              <h1 className="text-blue-400 m-auto 2xl:text-9xl xl:text-4xl lg:text-2xl font-bold">
-                Anlık Satışlar
-              </h1>
-            </div>
+        <div className="bg-light h-full rounded-3xl shadow row-span-8 col-start-2 row-start-1">
+          <div className="w-full p-5">
+            <h1 className="text-8xl text-center font-bold">Sıralama</h1>
           </div>
-          <div className="row h-[90%] w-[100%] m-auto">
-            <div className="col-12 overflow-y-auto max-h-[98%] custom-scroll">
-              <LiveList />
+          <div className="overflow-y-auto max-h-[94.5%] custom-scroll rounded-3xl w-full ">
+            <LiveList />
             </div>
-          </div>
         </div>
       </div>
+
+      
     </div>
   );
 }
