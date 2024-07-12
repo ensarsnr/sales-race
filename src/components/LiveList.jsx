@@ -211,7 +211,7 @@ function LiveList() {
   ];
 
   return (
-    <div className="table-container">
+    <div className="table-container xl:overflow-x-hidden overflow-x-auto">
       <table className="w-full min-w-full shadow divide-y divide-gray-200 rounded-lg">
         <thead className="bg-white rounded-t-lg">
           <tr>
