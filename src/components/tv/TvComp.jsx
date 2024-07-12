@@ -5,8 +5,12 @@ import TeamSection from '../TeamSection'
 import Lottie from 'react-lottie-player'
 import LiveList from '../LiveList'
 import make from "../../assets/anims/make.json"
-
+import sound from "../../assets/sound/mixkit-video-game-treasure-2066.wav"
+import useSound from 'use-sound'
 function TvComp() {
+
+  const [play] = useSound(sound);
+
   return (
     <div className="h-[94.2vh] 2xl:grid 2xl:grid-cols-2 2xl:grid-rows-8 hidden gap-2">
     <LiveSeller />
@@ -14,7 +18,7 @@ function TvComp() {
     <GraphSection />
     <TeamSection />
     {/* Bu kısma ne gelecek karar veremedik buraya karar verilir daha sonradan */}
-    <div className="bg-light rounded-3xl shadow row-span-2 col-start-1 row-start-7 text-8xl">
+    <div onMouseEnter={play} className="bg-light rounded-3xl shadow row-span-2 col-start-1 row-start-7 text-8xl">
       <div className="h-full w-full flex">
         <div className="w-2/4 h-2/4  m-auto">
           <Lottie
