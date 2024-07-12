@@ -14,6 +14,21 @@ function App() {
       className="2xl:p-3 xl:p-0 lg:p-0 md:p-0 sm:p-0"
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
+      {/* <div style={{ position: "relative" }}>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 10,
+            pointerEvents: "none",
+          }}
+        >
+          <Lottie loop play animationData={party} />
+        </div>
+      </div> */}
       <Navbar />
       <TvComp />
       {/* Laptop-Masaüstü görünümü */}
