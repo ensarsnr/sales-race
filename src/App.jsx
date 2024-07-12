@@ -17,7 +17,7 @@ function App() {
       <Navbar />
       <TvComp />
       {/* Laptop-Masaüstü görünümü */}
-      <div className="h-full 2xl:hidden p-3 grid grid-cols-2 gap-3">
+      <div className="h-full 2xl:hidden p-3 grid grid-cols-2  gap-3">
         <div className="bg-light rounded-xl shadow-md p-4">
           <div className="text-center text-3xl">sad</div>
           <div className="bg-black w-3/4 m-auto shadow-md h-3/4 mt-3 rounded-xl"></div>
@@ -32,7 +32,7 @@ function App() {
         <div className="bg-light rounded-xl shadow-md p-4 flex">
           <Lottie play loop animationData={make} className=" m-auto" />
         </div>
-        <div className="bg-light col-span-2 rounded-xl shadow">
+        <div className="bg-light md:overflow-x-auto  col-span-2 rounded-xl shadow">
           <LiveList />
         </div>
       </div>
