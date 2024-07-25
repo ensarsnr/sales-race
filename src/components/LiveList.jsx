@@ -1,214 +1,11 @@
 import React from "react";
 import { GiTrophyCup } from "react-icons/gi";
 
-function LiveList() {
-  const salesList = [
-    {
-      name: "Eyüp Ensar Şener",
-      team: "Takimİsimleri",
-      sales: "$20000000",
-    },
-    {
-      name: "Pascal Nouma",
-      team: "takım2",
-      sales: "$3000",
-    },
-    {
-      name: "Fatma",
-      team: "takım2",
-      sales: "$13000",
-    },
-    {
-      name: "Kerem",
-      team: "takım1",
-      sales: "$1000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-    {
-      name: "Deniz",
-      team: "takım2",
-      sales: "$5000",
-    },
-  ];
+function LiveList({ totalSales = [] }) {
+  // Toplam satışlara göre azalan sırada sıralama yap
+  const sortedSales = totalSales
+    .slice()
+    .sort((a, b) => b.toplam_satis - a.toplam_satis);
 
   return (
     <div className="table-container xl:overflow-x-hidden overflow-x-auto">
@@ -217,38 +14,32 @@ function LiveList() {
           <tr>
             <th
               scope="col"
-              className="px-6 py-3 2xl:text-5xl lg:text-xs font-bold text-center text-gray-500 uppercas"
+              className="px-6 py-3 2xl:text-5xl lg:text-xs font-bold text-center text-gray-500 uppercase"
             >
               NO
             </th>
             <th
               scope="col"
-              className="px-6 py-3 2xl:text-5xl lg:text-xs font-bold text-center text-gray-500 uppercas"
+              className="px-6 py-3 2xl:text-5xl lg:text-xs font-bold text-center text-gray-500 uppercase"
             >
               İsim-Soyisim
             </th>
             <th
               scope="col"
-              className="px-6 py-3 2xl:text-5xl lg:text-xs font-bold text-center text-gray-500 uppercas"
-            >
-              Takım
-            </th>
-            <th
-              scope="col"
-              className="px-6 py-3 2xl:text-5xl lg:text-xs font-bold text-center text-gray-500 uppercas"
+              className="px-6 py-3 2xl:text-5xl lg:text-xs font-bold text-center text-gray-500 uppercase"
             >
               Satış
             </th>
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-200">
-          {salesList.map((e, index) => (
+          {sortedSales.map((e, index) => (
             <tr
               className={index % 2 === 0 ? "bg-sky-500" : "bg-white"}
               key={index}
             >
               <td className="py-3 pl-4 text-gray-500 text-center">
-                <div className=" text-lg text-black 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs">
+                <div className="text-lg text-black 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs">
                   <div className="m-auto">
                     {index === 0 ? (
                       <GiTrophyCup
@@ -272,13 +63,10 @@ function LiveList() {
                 </div>
               </td>
               <td className="py-3 pl-4 text-dark text-center text-lg 2xl:text-5xl xl:text-1xl lg:text-4xl sm:text-xs">
-                {e.name}
+                {e.calisan_adi}
               </td>
               <td className="py-3 pl-4 text-dark text-center text-lg 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs">
-                {e.team}
-              </td>
-              <td className="py-3 pl-4 text-dark text-center text-lg 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs">
-                {e.sales}
+                {e.toplam_satis}
               </td>
             </tr>
           ))}
