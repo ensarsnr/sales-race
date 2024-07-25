@@ -3,61 +3,52 @@ import LiveSeller from "../LiveSeller";
 import GraphSection from "../GraphSection";
 import TeamSection from "../TeamSection";
 import LiveList from "../LiveList";
-import sound from "../../assets/sound/mixkit-video-game-treasure-2066.wav";
-import useSound from "use-sound";
-function TvComp() {
-  const [play] = useSound(sound);
-
-  const nameList = [
-    { name: "Meryem Yıldız", team: "Takım1", sel: 341 },
-    { name: "Leyla Kaplan", team: "Takım2", sel: 319 },
-    { name: "Halil İbrahim Güneş", team: "Takım1", sel: 3421 },
-    { name: "Metin Köse", team: "Takım2", sel: 141 },
-    { name: "Esra Güler", team: "Takım2", sel: 3341 },
-  ];
+function TvComp({ isConfetti, totalSales, sales }) {
 
   return (
     <div className="h-[94.2vh] 2xl:grid 2xl:grid-cols-2 2xl:grid-rows-8 hidden gap-2">
-      <LiveSeller />
+      <LiveSeller isConfetti={isConfetti} sales={sales} />
       {/* GraphSection */}
       <GraphSection />
       <TeamSection />
       {/* Bu kısma ne gelecek karar veremedik buraya karar verilir daha sonradan */}
       <div
-        onMouseEnter={play}
         className="bg-light rounded-3xl shadow row-span-2 col-start-1 row-start-7 text-8xl"
       >
         <div className="h-full w-full flex-col">
-          <div className="w-full text-center p-10">
-            <span>Anlık Veriler</span>
+          <div className="w-full  text-center p-10">
+            <span className="font-bold">Anlık Satış</span>
           </div>
           <div className="m-auto p-10">
-            <div class="block w-full overflow-x-auto">
-              <table class="items-center bg-transparent w-full border-collapse ">
-                <thead className="bg-white rounded-t-lg">
+            <div class="block w-full h-[17vh] overflow-y-auto">
+              <table className="items-center  bg-transparent w-full border-collapse">
+                <thead>
                   <tr>
-                    <th class="px-6 py-3  bg-blueGray-50 text-blueGray-500 align-middle 2xl:text-5xl lg:text-xs text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                    <th className="px-1 bg-blueGray-50 text-blueGray-500  text-5xl uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                       İsim
                     </th>
-                    <th class="px-6  py-3 bg-blueGray-50 text-blueGray-500 align-middle 2xl:text-5xl lg:text-xs text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                      Takım
+                    <th className="px-1 bg-blueGray-50 text-blueGray-500  text-5xl uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                      Hizmet
                     </th>
-                    <th class="px-6 py-3 bg-blueGray-50 text-blueGray-500 align-middle 2xl:text-5xl lg:text-xs text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                    <th className="px-1 bg-blueGray-50 text-blueGray-500  text-5xl uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                       Satış
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {nameList.map((e) => (
-                    <tr>
-                      <th class="py-3 border 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                        {e.name}
+                  {sales.toReversed().map((sale, index) => (
+                    <tr
+                      className={index % 2 === 0 ? "bg-gray-100" : ""}
+                      key={index}
+                    >
+                      <th className="px-0 py-3 border-t-0 align-middle border-l-0 border-r-0 text-4xl whitespace-nowrap p-2 text-left text-blueGray-700 ">
+                        {sale.calisan_adi}
                       </th>
-                      <td class="py-3 border 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                        {e.team}{" "}
+                      <td className="px-0 py-3 border-t-0 align-middle border-l-0 border-r-0 text-4xl whitespace-nowrap p-2 ">
+                        {sale.hizmet}
                       </td>
-                      <td class="py-3 border 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {e.sel}
+                      <td className="px-0 py-3 border-t-0 align-center border-l-0 border-r-0 text-4xl whitespace-nowrap p-2">
+                        {sale.fiyat} {sale.para_birimi}
                       </td>
                     </tr>
                   ))}
@@ -72,7 +63,7 @@ function TvComp() {
           <h1 className="text-8xl text-center font-bold">SIRALMA</h1>
         </div>
         <div className="overflow-y-auto max-h-[94.5%] custom-scroll rounded-3xl w-full ">
-          <LiveList />
+          <LiveList totalSales={totalSales} sales={sales} />
         </div>
       </div>
     </div>
