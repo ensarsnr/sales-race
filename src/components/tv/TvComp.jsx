@@ -20,7 +20,7 @@ function TvComp({ isConfetti, totalSales, sales }) {
             <span className="font-bold">Anlık Satış</span>
           </div>
           <div className="m-auto p-10">
-            <div class="block w-full h-[17vh] overflow-y-auto">
+            <div className="block w-full h-[17vh] overflow-y-auto">
               <table className="items-center  bg-transparent w-full border-collapse">
                 <thead>
                   <tr>
