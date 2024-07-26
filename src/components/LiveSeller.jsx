@@ -1,7 +1,7 @@
 import React from "react";
 import Lottie from "react-lottie-player";
-import party from "../assets/anims/party.json"
-function LiveSeller() {
+import party from "../assets/anims/party.json";
+function LiveSeller({ isConfetti, sales }) {
   return (
     <div className="bg-light rounded-3xl shadow row-span-2">
       <div style={{ position: "relative" }}>
@@ -16,11 +16,15 @@ function LiveSeller() {
             pointerEvents: "none",
           }}
         >
-          <Lottie   loop play animationData={party} />
+          {isConfetti ? <Lottie loop play animationData={party} /> : <></>}
         </div>
       </div>
       <div className="w-full p-5 text-center">
-        <span className="2xl:text-8xl xl:text-6xl lg:text-5xl font-bold">s</span>
+        <span className="2xl:text-8xl xl:text-6xl lg:text-5xl font-bold">
+        {sales.length > 0
+            ? sales[sales.length - 1].calisan_adi
+            : "Yükleniyor..."}
+        </span>
       </div>
       <div className="h-4/6">
         <div className="shadow m-auto w-3/4 rounded-3xl h-full bg-warning">
