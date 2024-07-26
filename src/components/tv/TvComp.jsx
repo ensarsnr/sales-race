@@ -8,7 +8,7 @@ import services from "../../service";
 
 const socket = io('http://localhost:3000');
 
-function TvComp({ isConfetti, totalSales }) {
+function TvComp({ isConfetti, totalSales, salesList }) {
   const [sales, setSales] = useState([]);
 
   // Veriyi API'den çek ve socket ile gelen verilerle güncelle
@@ -74,7 +74,7 @@ function TvComp({ isConfetti, totalSales }) {
 
   return (
     <div className="h-[94.2vh] 2xl:grid 2xl:grid-cols-2 2xl:grid-rows-8 hidden gap-2">
-      <LiveSeller isConfetti={isConfetti} sales={sales} />
+      <LiveSeller isConfetti={isConfetti} sales={salesList} />
       <GraphSection />
       <TeamSection />
       <div className="bg-light rounded-3xl shadow row-span-2 col-start-1 row-start-7 text-8xl">
