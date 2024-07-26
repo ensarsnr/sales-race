@@ -4,7 +4,7 @@ import graph from "../../assets/anims/graph.json";
 import LiveList from "../../components/LiveList";
 import party from "../../assets/anims/party.json";
 
-function DesktopComp({ totalSales, sales }) {
+function DesktopComp({ totalSales, sales, isConfetti }) {
   console.log(sales);
 
   return (
@@ -22,7 +22,7 @@ function DesktopComp({ totalSales, sales }) {
               pointerEvents: "none",
             }}
           >
-            <Lottie loop play animationData={party} />
+            {isConfetti ? <Lottie loop play animationData={party} /> : <></>}
           </div>
         </div>
         <div className="text-center text-3xl">
