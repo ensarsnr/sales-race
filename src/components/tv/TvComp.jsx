@@ -6,10 +6,11 @@ import TeamSection from "../TeamSection";
 import LiveList from "../LiveList";
 import services from "../../service";
 
-const socket = io('http://localhost:3000');
+const socket = io("http://localhost:3000");
 
-function TvComp({ isConfetti, totalSales, salesList }) {
+function TvComp({ isConfetti }) {
   const [sales, setSales] = useState([]);
+  const [totalSales, setTotalSales] = useState([]);
 
   // Veriyi API'den çek ve socket ile gelen verilerle güncelle
   useEffect(() => {
@@ -17,64 +18,81 @@ function TvComp({ isConfetti, totalSales, salesList }) {
       try {
         const response = await services.getAllSales();
         if (response && response.data) {
-          const initialSales = response.data.map(item => ({
+          const initialSales = response.data.map((item) => ({
             calisan_adi: item.SATIS || item.calisan_adi,
             hizmet: item.HIZMET || item.hizmet,
             fiyat: item.FIYAT || item.fiyat,
             para_birimi: item.PARA_BIRIMI || item.para_birimi,
-            id: item.id || `${item.SATIS}-${item.HIZMET}-${item.FIYAT}-${item.PARA_BIRIMI}`
+            id:
+              item.id ||
+              `${item.SATIS}-${item.HIZMET}-${item.FIYAT}-${item.PARA_BIRIMI}`,
           }));
           setSales(initialSales);
         }
       } catch (error) {
-        console.log('Error fetching initial sales:', error);
+        console.log("Error fetching initial sales:", error);
       }
     };
 
     fetchSales();
 
-    socket.on('newData', (data) => {
-      console.log('Gelen veri:', data);
+    socket.on("newData", (data) => {
+      console.log("Gelen veri:", data);
 
       // Eğer veri tekil bir nesne ise, bunu diziye dönüştürün
       const dataArray = Array.isArray(data) ? data : [data];
 
       // Verileri uygun formata dönüştürme
       const formattedData = dataArray.map((item) => ({
-        calisan_adi: item.CALISAN_ADI || 'Bilinmiyor',
-        hizmet: item.HIZMET || 'Bilinmiyor',
+        calisan_adi: item.CALISAN_ADI || "Bilinmiyor",
+        hizmet: item.HIZMET || "Bilinmiyor",
         fiyat: item.FIYAT || 0,
-        para_birimi: item.PARA_BIRIMI || 'Bilinmiyor',
+        para_birimi: item.PARA_BIRIMI || "Bilinmiyor",
       }));
 
       // Önceki satışları güncelleyerek yeni verileri ekleme
       setSales((prevSales) => {
-        const existingSalesSet = new Set(prevSales.map(sale => JSON.stringify({
-          calisan_adi: sale.calisan_adi,
-          hizmet: sale.hizmet,
-          fiyat: sale.fiyat,
-          para_birimi: sale.para_birimi
-        })));
-        
-        const newSales = formattedData.filter(sale => !existingSalesSet.has(JSON.stringify({
-          calisan_adi: sale.calisan_adi,
-          hizmet: sale.hizmet,
-          fiyat: sale.fiyat,
-          para_birimi: sale.para_birimi
-        })));
+        const existingSalesSet = new Set(
+          prevSales.map((sale) =>
+            JSON.stringify({
+              calisan_adi: sale.calisan_adi,
+              hizmet: sale.hizmet,
+              fiyat: sale.fiyat,
+              para_birimi: sale.para_birimi,
+            })
+          )
+        );
+
+        const newSales = formattedData.filter(
+          (sale) =>
+            !existingSalesSet.has(
+              JSON.stringify({
+                calisan_adi: sale.calisan_adi,
+                hizmet: sale.hizmet,
+                fiyat: sale.fiyat,
+                para_birimi: sale.para_birimi,
+              })
+            )
+        );
 
         return [...prevSales, ...newSales];
       });
     });
 
+    socket.on("totalSales", (data) => {
+      console.log("Toplam satış verisi:", data);
+      setTotalSales(data);
+    });
+
     return () => {
-      socket.off('newData');
+      socket.off("newData");
+      socket.off("totalSales");
     };
   }, []);
 
   return (
     <div className="h-[94.2vh] 2xl:grid 2xl:grid-cols-2 2xl:grid-rows-8 hidden gap-2">
-      <LiveSeller isConfetti={isConfetti} sales={salesList} />
+      <LiveSeller isConfetti={isConfetti} sales={sales} />
       <GraphSection />
       <TeamSection />
       <div className="bg-light rounded-3xl shadow row-span-2 col-start-1 row-start-7 text-8xl">
@@ -126,7 +144,7 @@ function TvComp({ isConfetti, totalSales, salesList }) {
           <h1 className="text-8xl text-center font-bold">SIRALAMA</h1>
         </div>
         <div className="overflow-y-auto max-h-[94.5%] custom-scroll rounded-3xl w-full">
-          <LiveList totalSales={totalSales} sales={sales} />
+          <LiveList totalSales={totalSales} />
         </div>
       </div>
     </div>
