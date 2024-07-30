@@ -44,10 +44,10 @@ function TvComp({ isConfetti }) {
 
       // Verileri uygun formata dönüştürme
       const formattedData = dataArray.map((item) => ({
-        calisan_adi: item.CALISAN_ADI || "Bilinmiyor",
-        hizmet: item.HIZMET || "Bilinmiyor",
+        calisan_adi: item.CALISAN_ADI || item.calisan_adi,
+        hizmet: item.HIZMET || item.hizmet,
         fiyat: item.FIYAT || 0,
-        para_birimi: item.PARA_BIRIMI || "Bilinmiyor",
+        para_birimi: item.PARA_BIRIMI || item.para_birimi,
       }));
 
       // Önceki satışları güncelleyerek yeni verileri ekleme
@@ -120,7 +120,7 @@ function TvComp({ isConfetti }) {
                   {sales.toReversed().map((sale, index) => (
                     <tr
                       className={index % 2 === 0 ? "bg-gray-100" : ""}
-                      key={sale.id || index}
+                      key={index}
                     >
                       <th className="px-0 py-3 border-t-0 align-middle border-l-0 border-r-0 text-4xl whitespace-nowrap p-2 text-left text-blueGray-700">
                         {sale.calisan_adi}
