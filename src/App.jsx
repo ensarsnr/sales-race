@@ -88,7 +88,7 @@ function App() {
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <Navbar />
-      <TvComp  salesList={sales} />
+      <TvComp isConfetti={isConfetti} salesList={sales} />
       <DesktopComp isConfetti={isConfetti} totalSales={totalSales} sales={sales} />
     </div>
   );
