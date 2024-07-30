@@ -63,7 +63,7 @@ const LiveList = ({ totalSales }) => {
                 {e.calisan_adi}
               </td>
               <td className="py-3 pl-4 text-dark text-center text-lg 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs">
-                {e.toplam_satis}
+                {e.toplam_satis}$
               </td>
             </tr>
           ))}
