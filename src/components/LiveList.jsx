@@ -3,7 +3,7 @@ import { GiTrophyCup } from 'react-icons/gi';
 
 const LiveList = ({ totalSales }) => {
   const sortedSales = totalSales.slice().sort((a, b) => b.toplam_satis - a.toplam_satis);
-
+  
   return (
     <div className="table-container xl:overflow-x-hidden overflow-x-auto">
       <table className="w-full min-w-full shadow divide-y divide-gray-200 rounded-lg">
