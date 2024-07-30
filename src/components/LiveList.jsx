@@ -23,9 +23,9 @@ const LiveList = ({ totalSales }) => {
             </th>
             <th
               scope="col"
-              className="px-6 py-3 2xl:text-5xl lg:text-xs font-bold text-center text-gray-500 uppercase"
+              className="px-6 py-3 2xl:text-5xl lg:text-xs font-bold text-right text-gray-500 uppercase"
             >
-              Satış
+              <span className='mr-10'>Satış</span>
             </th>
           </tr>
         </thead>
@@ -62,8 +62,8 @@ const LiveList = ({ totalSales }) => {
               <td className="py-3 pl-4 text-dark text-center text-lg 2xl:text-5xl xl:text-1xl lg:text-4xl sm:text-xs">
                 {e.calisan_adi}
               </td>
-              <td className="py-3 pl-4 text-dark text-center text-lg 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs">
-                {e.toplam_satis}$
+              <td className="py-3 pl-4 text-dark text-right text-lg 2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs">
+                <span className='mr-10'>{e.toplam_satis}$</span>
               </td>
             </tr>
           ))}
