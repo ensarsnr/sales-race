@@ -125,7 +125,7 @@ function TvComp({ isConfetti }) {
                       <th className="px-0 py-3 border-t-0 align-middle border-l-0 border-r-0 text-4xl whitespace-nowrap p-2 text-left text-blueGray-700">
                         {sale.calisan_adi}
                       </th>
-                      <td className="px-0 py-3 border-t-0 align-middle border-l-0 border-r-0 text-4xl whitespace-nowrap p-2">
+                      <td className="overflow-hidden max-w-[20ch] px-0 py-3 border-t-0 align-middle border-l-0 border-r-0 text-4xl whitespace-nowrap p-2">
                         {sale.hizmet}
                       </td>
                       <td className="px-0 py-3 border-t-0 align-center border-l-0 border-r-0 text-4xl whitespace-nowrap p-2">
