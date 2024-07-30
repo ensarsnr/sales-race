@@ -63,3 +63,13 @@
 	border-bottom-right-radius: 0.75rem;
   }
   
+  /* Scrollbar'ı gizleyen özel bir sınıf */
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+  }
+  
+  .scrollbar-hide {
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+	scrollbar-width: none;  /* Firefox */
+  }
+  
