@@ -14,16 +14,14 @@ function App() {
   const [totalSales, setTotalSales] = useState([]);
   const [play] = useSound(sound, { volume: 1 });
   const [isConfetti, setIsConfetti] = useState(false);
-  const [prevLength, setPrevLength] = useState(0);
 
   useEffect(() => {
     // Socket.io bağlantısını kur
     const socket = io("http://localhost:3000");
-    
+
     // Sunucudan gelen 'newData' olaylarını dinle
     socket.on("newData", (newData) => {
       console.log("Yeni veri alındı:", newData);
-      console.log(`SALESS: ${sales.length}`);
 
       setSales((prevSales) => {
         const exists = prevSales.some(
@@ -34,22 +32,16 @@ function App() {
         );
 
         if (!exists) {
-          const updatedSales = [newData, ...prevSales];
-
           // Yeni veri eklendiğinde sesi çal
-          if (updatedSales.length > prevLength) {
-            play();
-
-            // Konfeti efektini ayarla ve 2 saniye sonra sıfırla
-            setIsConfetti(true);
-            setTimeout(() => {
-              setIsConfetti(false);
-            }, 3000);
-
-            setPrevLength(updatedSales.length);
-          }
-
-          return updatedSales;
+          play();
+          
+          // Konfeti efektini ayarla ve 2 saniye sonra sıfırla
+          setIsConfetti(true);
+          setTimeout(() => {
+            setIsConfetti(false);
+          }, 3000);
+          
+          return [newData, ...prevSales];
         }
 
         return prevSales;
@@ -67,7 +59,6 @@ function App() {
       try {
         const response = await services.getAllSales();
         setSales(response.data);
-        setPrevLength(response.data.length); // Başlangıç verileri ile prevLength'i ayarla
       } catch (error) {
         console.log(error);
       }
@@ -89,7 +80,7 @@ function App() {
     return () => {
       socket.disconnect();
     };
-  }, [play]);
+  }, [play]); // play fonksiyonunu bağımlılıklara ekleyin
 
   return (
     <div
@@ -97,7 +88,7 @@ function App() {
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <Navbar />
-      <TvComp salesList={sales} />
+      <TvComp  salesList={sales} />
       <DesktopComp isConfetti={isConfetti} totalSales={totalSales} sales={sales} />
     </div>
   );
