@@ -100,8 +100,8 @@ function TvComp({ isConfetti }) {
           <div className="w-full text-center p-10">
             <span className="font-bold">Anlık Satış</span>
           </div>
-          <div className="m-auto p-10">
-            <div className="block w-full h-[17vh] overflow-y-auto">
+          <div className="p-3">
+            <div className=" w-full h-[17vh] block overflow-y-auto">
               <table className="items-center bg-transparent w-full border-collapse">
                 <thead>
                   <tr>
@@ -111,7 +111,7 @@ function TvComp({ isConfetti }) {
                     <th className="px-1 bg-blueGray-50 text-blueGray-500 text-5xl uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                       Hizmet
                     </th>
-                    <th className="px-1 bg-blueGray-50 text-blueGray-500 text-5xl uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                    <th className="text-center px-1 bg-blueGray-50 text-blueGray-500 text-5xl uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold">
                       Satış
                     </th>
                   </tr>
@@ -125,10 +125,10 @@ function TvComp({ isConfetti }) {
                       <th className="px-0 py-3 border-t-0 align-middle border-l-0 border-r-0 text-4xl whitespace-nowrap p-2 text-left text-blueGray-700">
                         {sale.calisan_adi}
                       </th>
-                      <td className="overflow-hidden max-w-[20ch] px-0 py-3 border-t-0 align-middle border-l-0 border-r-0 text-4xl whitespace-nowrap p-2">
+                      <td className="overflow-hidden max-w-[10ch] px-0 py-3 border-t-0 align-middle border-l-0 border-r-0 text-4xl whitespace-nowrap p-2">
                         {sale.hizmet}
                       </td>
-                      <td className="px-0 py-3 border-t-0 align-center border-l-0 border-r-0 text-4xl whitespace-nowrap p-2">
+                      <td className="text-center px-0 py-3 border-t-0 align-center border-l-0 border-r-0 text-4xl whitespace-nowrap p-2">
                         {sale.fiyat} {sale.para_birimi}
                       </td>
                     </tr>
