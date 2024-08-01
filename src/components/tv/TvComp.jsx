@@ -98,7 +98,7 @@ function TvComp({ isConfetti }) {
       <div className="bg-light rounded-3xl shadow row-span-2 col-start-1 row-start-7 text-8xl">
         <div className="h-full w-full flex-col">
           <div className="w-full text-center p-10">
-            <span className="font-bold">Anlık Satış</span>
+            <span style={{fontFamily:"TitleFont"}} className="font-bold">Anlık Veri</span>
           </div>
           <div className="p-3">
             <div className=" w-full h-[17vh] block overflow-y-auto">
@@ -141,7 +141,7 @@ function TvComp({ isConfetti }) {
       </div>
       <div className="bg-light h-full rounded-3xl shadow row-span-8 col-start-2 row-start-1 col-span-12">
         <div className="w-full p-5">
-          <h1 className="text-8xl text-center font-bold">SIRALAMA</h1>
+          <h1 style={{fontFamily:"TitleFont"}} className="text-8xl text-center font-bold">SIRALAMA</h1>
         </div>
         <div className="overflow-y-auto max-h-[94.5%] custom-scroll rounded-3xl w-full">
           <LiveList totalSales={totalSales} />
