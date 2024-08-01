@@ -6,7 +6,7 @@ import TeamSection from "../TeamSection";
 import LiveList from "../LiveList";
 import services from "../../service";
 
-const socket = io("http://192.168.40.209:3000");
+const socket = io("http://192.168.40.224:3000");
 
 function TvComp({ isConfetti }) {
   const [sales, setSales] = useState([]);
