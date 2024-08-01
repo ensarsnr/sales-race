@@ -6,11 +6,15 @@ import party from "../../assets/anims/party.json";
 import { io } from "socket.io-client";
 import services from "../../service";
 
-const socket = io("http://localhost:3000");
+const socket = io("http://192.168.40.209:3000");
 
 function DesktopComp({ isConfetti }) {
   const [sales, setSales] = useState([]);
   const [totalSales, setTotalSales] = useState([]);
+
+  const normalizeName = (name) => {
+    return name.replace(/\s+/g, "").toLowerCase();
+  };
 
   // Veriyi API'den çek ve socket ile gelen verilerle güncelle
   useEffect(() => {
@@ -139,23 +143,30 @@ function DesktopComp({ isConfetti }) {
               </tr>
             </thead>
             <tbody>
-              {sales.slice().reverse().map((sale, index) => (
-                <tr
-                  className={index % 2 === 0 ? "bg-gray-100" : ""}
-                  key={index}
-                >
-                  
-                  <th className="text-left px-1 border-t-0 align-middle border-l-0 border-r-0 text-[8px] whitespace-nowrap p-2  text-blueGray-700">
-                    {sale.calisan_adi}
-                  </th>
-                  <td className="text-center overflow-hidden max-w-[20ch]  px-1 border-t-0 align-middle border-l-0 border-r-0 text-[8px] whitespace-nowrap p-2">
-                    {sale.hizmet}
-                  </td>
-                  <td className="px-1 border-t-0 align-center float-end border-l-0 border-r-0 text-[8px] whitespace-nowrap p-2">
-                    {sale.fiyat} {sale.para_birimi}
-                  </td>
-                </tr>
-              ))}
+              {sales
+                .filter(
+                  (e) =>
+                    normalizeName(e.calisan_adi) !==
+                    normalizeName("Murtaza Orçun Başar")
+                )
+                .slice()
+                .reverse()
+                .map((sale, index) => (
+                  <tr
+                    className={index % 2 === 0 ? "bg-gray-100" : ""}
+                    key={index}
+                  >
+                    <th className="text-left px-1 border-t-0 align-middle border-l-0 border-r-0 text-[8px] whitespace-nowrap p-2  text-blueGray-700">
+                      {sale.calisan_adi}
+                    </th>
+                    <td className="text-center overflow-hidden max-w-[20ch]  px-1 border-t-0 align-middle border-l-0 border-r-0 text-[8px] whitespace-nowrap p-2">
+                      {sale.hizmet}
+                    </td>
+                    <td className="px-1 border-t-0 align-center float-end border-l-0 border-r-0 text-[8px] whitespace-nowrap p-2">
+                      {sale.fiyat} {sale.para_birimi}
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
