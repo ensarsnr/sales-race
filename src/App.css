@@ -1,75 +1,70 @@
-
-
 #cssportal-grid {
-    padding: 6px;
-	display: grid;
-	grid-template-rows: repeat(6, 1fr);
-	grid-template-columns: repeat(6, 1fr);
-	gap: 0;
-	width: 100%;
-	height: 94.5vh;
-    gap:20px;
-
-	
+  padding: 6px;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  width: 100%;
+  height: 94.5vh;
+  gap: 20px;
 }
 #div1 {
-
-	grid-area: 1 / 1 / 4 / 4;
-	
+  grid-area: 1 / 1 / 4 / 4;
 }
 #div2 {
-	grid-area: 4 / 1 / 7 / 4;
-	
+  grid-area: 4 / 1 / 7 / 4;
 }
 #div3 {
-	grid-area: 1 / 4 / 7 / 7;
-	
+  grid-area: 1 / 4 / 7 / 7;
 }
 
-
 .custom-scroll {
-	overflow-y: auto;
-	max-height: 98%;
-	-ms-overflow-style: none;  /* Internet Explorer 10+ */
-	scrollbar-width: none;  /* Firefox */
-  }
-  
-  .custom-scroll::-webkit-scrollbar { 
-	display: none;  /* Safari and Chrome */
-  }
+  overflow-y: auto;
+  max-height: 98%;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
 
-  /* Stil dosyasına ekleyin */
+.custom-scroll::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Stil dosyasına ekleyin */
 .table-container {
-	overflow: hidden;
-	border-radius: 0.75rem; /* Tablonun genel kenarlarını yuvarlamak için */
-  }
-  
-  table {
-	border-collapse: separate;
-	border-spacing: 0;
-  }
-  
-  thead {
-	border-top-left-radius: 0.75rem;
-	border-top-right-radius: 0.75rem;
-	overflow: hidden;
-  }
-  
-  tbody tr:last-child td:first-child {
-	border-bottom-left-radius: 0.75rem;
-  }
-  
-  tbody tr:last-child td:last-child {
-	border-bottom-right-radius: 0.75rem;
-  }
-  
-  /* Scrollbar'ı gizleyen özel bir sınıf */
+  overflow: hidden;
+  border-radius: 0.75rem; /* Tablonun genel kenarlarını yuvarlamak için */
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+thead {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  overflow: hidden;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 0.75rem;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 0.75rem;
+}
+
+/* Scrollbar'ı gizleyen özel bir sınıf */
 .scrollbar-hide::-webkit-scrollbar {
-	display: none;
-  }
-  
-  .scrollbar-hide {
-	-ms-overflow-style: none;  /* Internet Explorer 10+ */
-	scrollbar-width: none;  /* Firefox */
-  }
-  
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+@font-face {
+  font-family: "TitleFont";
+  src: url(.\assets\fonts\Fredoka,Inknut_Antiqua\Fredoka/static/Fredoka-SemiBold.ttf) format("woff");
+}
