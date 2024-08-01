@@ -112,7 +112,7 @@ function DesktopComp({ isConfetti }) {
             {isConfetti ? <Lottie loop play animationData={party} /> : <></>}
           </div>
         </div>
-        <div className="text-center text-3xl">
+        <div style={{fontFamily: "TitleFont"}}  className="text-center text-3xl">
           {sales.length > 0
             ? sales[sales.length - 1].calisan_adi
             : "Yükleniyor..."}
