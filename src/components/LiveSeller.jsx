@@ -1,6 +1,9 @@
 import React from "react";
 import Lottie from "react-lottie-player";
 import party from "../assets/anims/party.json";
+import { IoMdPerson } from "react-icons/io";
+
+
 function LiveSeller({ isConfetti, sales }) {
   return (
     <div className="bg-light rounded-3xl shadow row-span-2">
@@ -27,8 +30,9 @@ function LiveSeller({ isConfetti, sales }) {
         </span>
       </div>
       <div className="h-4/6">
-        <div className="shadow m-auto w-3/4 rounded-3xl h-full bg-warning">
-          {/* Buraya resim gelecek */}s
+        <div className=" m-auto w-3/4 rounded-3xl h-full">
+        <IoMdPerson className=" w-full h-full" />
+
         </div>
       </div>
     </div>
