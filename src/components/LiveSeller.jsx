@@ -23,7 +23,7 @@ function LiveSeller({ isConfetti, sales }) {
         </div>
       </div>
       <div className="w-full p-5 text-center">
-        <span className="2xl:text-8xl xl:text-6xl lg:text-5xl font-bold">
+        <span style={{fontFamily: "TitleFont"}} className="2xl:text-8xl xl:text-6xl lg:text-5xl font-bold">
         {sales.length > 0
             ? sales[sales.length - 1].calisan_adi
             : "Yükleniyor..."}
