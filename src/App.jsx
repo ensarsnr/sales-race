@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     // Socket.io bağlantısını kur
-    const socket = io("http://localhost:3000");
+    const socket = io("http://192.168.40.224:3000");
 
     // Sunucudan gelen 'newData' olaylarını dinle
     socket.on("newData", (newData) => {
