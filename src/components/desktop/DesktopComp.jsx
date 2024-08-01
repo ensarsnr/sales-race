@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Lottie from "react-lottie-player";
-import graph from "../../assets/anims/graph.json";
+import graph from "../../assets/anims/lazycat.json";
 import LiveList from "../../components/LiveList";
 import party from "../../assets/anims/party.json";
 import { io } from "socket.io-client";
 import services from "../../service";
+import { PiDiceOneThin } from "react-icons/pi";
+import { IoMdPerson } from "react-icons/io";
 
 const socket = io("http://192.168.40.224:3000");
 
@@ -95,7 +97,7 @@ function DesktopComp({ isConfetti }) {
   }, []);
 
   return (
-    <div className="h-full 2xl:hidden p-3 grid grid-cols-2 gap-3">
+    <div className="h-full 2xl:hidden p-3 grid grid-cols-2 gap-10">
       <div className="bg-light rounded-xl shadow-md p-4">
         <div style={{ position: "relative" }}>
           <div
@@ -117,27 +119,32 @@ function DesktopComp({ isConfetti }) {
             ? sales[sales.length - 1].calisan_adi
             : "Yükleniyor..."}
         </div>
-        <div className="bg-black w-3/4 m-auto shadow-md h-3/4 mt-3 rounded-xl"></div>
+        <div className=" w-3/4 m-auto  h-3/4 mt-3 rounded-xl">
+            <IoMdPerson className="w-full h-full" />
+        </div>
       </div>
       <div className="bg-light rounded-xl shadow-md p-4">
+        <h1 className="text-center text-3xl" style={{fontFamily:"TitleFont"}}>Tembel</h1>
         <Lottie play loop animationData={graph} />
       </div>
       <div className="bg-light rounded-xl shadow-md p-4">
-        <div className="text-center text-3xl">Takım-1</div>
-        <div className="bg-black w-3/4 m-auto shadow-md h-3/4 mt-3 rounded-xl"></div>
+        <div style={{fontFamily:"TitleFont"}}  className="text-center text-3xl">Takım-1</div>
+        <div className=" w-3/4 m-auto h-3/4 mt-3 rounded-xl">
+            <PiDiceOneThin className="w-full h-full" />
+        </div>
       </div>
       <div className="bg-light rounded-xl shadow-md p-4 flex">
-        <div className="scrollbar-hide overflow-y-auto block w-full h-64">
+        <div className="scrollbar-hide overflow-y-auto block w-full h-[63ch]">
           <table className="items-center bg-transparent w-full border-collapse">
             <thead>
               <tr>
-                <th className="px-1 bg-blueGray-50 text-blueGray-500 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                <th className="px-1 bg-blueGray-50 text-blueGray-500 text-2xl uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                   İsim
                 </th>
-                <th className="px-1 bg-blueGray-50 text-blueGray-500 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">
+                <th className="px-1 bg-blueGray-50 text-blueGray-500 text-2xl uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">
                   Hizmet
                 </th>
-                <th className="text-end px-1 bg-blueGray-50 text-blueGray-500 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold">
+                <th className="text-end px-1 bg-blueGray-50 text-blueGray-500 text-2xl uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold">
                   Satış
                 </th>
               </tr>
@@ -156,13 +163,13 @@ function DesktopComp({ isConfetti }) {
                     className={index % 2 === 0 ? "bg-gray-100" : ""}
                     key={index}
                   >
-                    <th className="text-left px-1 border-t-0 align-middle border-l-0 border-r-0 text-[8px] whitespace-nowrap p-2  text-blueGray-700">
+                    <th className="text-left px-1 border-t-0 align-middle border-l-0 border-r-0 text-md whitespace-nowrap p-2  text-blueGray-700">
                       {sale.calisan_adi}
                     </th>
-                    <td className="text-center overflow-hidden max-w-[20ch]  px-1 border-t-0 align-middle border-l-0 border-r-0 text-[8px] whitespace-nowrap p-2">
+                    <td className="text-center overflow-hidden max-w-[20ch]  px-1 border-t-0 align-middle border-l-0 border-r-0 text-md whitespace-nowrap p-2">
                       {sale.hizmet}
                     </td>
-                    <td className="px-1 border-t-0 align-center float-end border-l-0 border-r-0 text-[8px] whitespace-nowrap p-2">
+                    <td className="px-1 border-t-0 align-center float-end border-l-0 border-r-0 text-md whitespace-nowrap p-2">
                       {sale.fiyat} {sale.para_birimi}
                     </td>
                   </tr>
