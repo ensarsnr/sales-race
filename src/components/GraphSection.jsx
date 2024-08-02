@@ -5,7 +5,7 @@ function GraphSection() {
   return (
     <div className="bg-light rounded-3xl shadow row-span-2 p-5">
       <div className="h-full w-full">
-        <h1 style={{fontFamily:"TitleFont"}} className="text-center text-9xl">Ayın Tembeli</h1>
+        <h1 style={{fontFamily:"TitleFont"}} className="text-center text-7xl">30 Gün</h1>
         <Lottie loop animationData={graph} play className="2xl:w-full h-full" />
       </div>
     </div>
