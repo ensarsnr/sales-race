@@ -4,7 +4,7 @@ import backgroundImg from "./assets/image/Zemin.png";
 import Navbar from "./components/Navbar";
 import TvComp from "./components/tv/TvComp";
 import useSound from "use-sound";
-import sound from "./assets/sound/clapping.vaw";
+import sound from "./assets/sound/clapping.wav";
 import services from "./service/index";
 import DesktopComp from "./components/desktop/DesktopComp";
 import io from "socket.io-client";
