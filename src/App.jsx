@@ -3,16 +3,16 @@ import "./App.css";
 import backgroundImg from "./assets/image/Zemin.png";
 import Navbar from "./components/Navbar";
 import TvComp from "./components/tv/TvComp";
-import useSound from "use-sound";
-import sound from "./assets/sound/clapping.wav";
+// import useSound from "use-sound";
+// import sound from "./assets/sound/clapping.wav";
 import services from "./service/index";
-import DesktopComp from "./components/desktop/DesktopComp";
+// import DesktopComp from "./components/desktop/DesktopComp";
 import io from "socket.io-client";
 
 function App() {
   const [sales, setSales] = useState([]);
   const [totalSales, setTotalSales] = useState([]);
-  const [play] = useSound(sound, { volume: 1 });
+  // const [play] = useSound(sound, { volume: 1 });
   const [isConfetti, setIsConfetti] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function App() {
 
         if (!exists) {
           // Yeni veri eklendiğinde sesi çal
-          play();
+          // play();
           
           // Konfeti efektini ayarla ve 2 saniye sonra sıfırla
           setIsConfetti(true);
@@ -80,7 +80,7 @@ function App() {
     return () => {
       socket.disconnect();
     };
-  }, [play]); // play fonksiyonunu bağımlılıklara ekleyin
+  }, []); // play fonksiyonunu bağımlılıklara ekleyin
 
   return (
     <div
@@ -89,7 +89,7 @@ function App() {
     >
       <Navbar />
       <TvComp isConfetti={isConfetti} salesList={sales} />
-      <DesktopComp isConfetti={isConfetti} totalSales={totalSales} sales={sales} />
+      {/*<DesktopComp isConfetti={isConfetti} totalSales={totalSales} sales={sales} />*/}
     </div>
   );
 }

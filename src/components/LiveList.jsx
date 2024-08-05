@@ -1,9 +1,9 @@
 import React from "react";
-import { GiTrophyCup } from "react-icons/gi";
-import Lottie from "react-lottie-player";
-import goldCup from "../assets/anims/goldcup.json";
-import silverCup from "../assets/anims/silvercup.json";
-import bronzeCup from "../assets/anims/bronzecup.json";
+// import { GiTrophyCup } from "react-icons/gi";
+// import Lottie from "react-lottie-player";
+// import goldCup from "../assets/anims/goldcup.json";
+// import silverCup from "../assets/anims/silvercup.json";
+// import bronzeCup from "../assets/anims/bronzecup.json";
 
 const LiveList = ({ totalSales }) => {
   const sortedSales = totalSales
@@ -65,7 +65,8 @@ const LiveList = ({ totalSales }) => {
                 >
                   <div className="text-lg  2xl:text-5xl xl:text-1xl lg:text-xl sm:text-xs">
                     <div className="m-auto">
-                      {index === 0 ? (
+                      {index + 1}
+                      {/* {index === 0 ? (
                         <Lottie
                           className="m-auto 2xl:w-32 2xl:h-24 xl:w-9 xl:h-9 lg:w-6 lg:h-6 sm:w-3 sm:h-3 w-10 h-10"
                           loop
@@ -92,7 +93,7 @@ const LiveList = ({ totalSales }) => {
                         />
                       ) : (
                         index + 1
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </td>

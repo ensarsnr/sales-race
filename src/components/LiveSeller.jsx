@@ -1,7 +1,7 @@
 import React from "react";
-import Lottie from "react-lottie-player";
-import party from "../assets/anims/party.json";
-import { IoMdPerson } from "react-icons/io";
+// import Lottie from "react-lottie-player";
+// import party from "../assets/anims/party.json";
+// import { IoMdPerson } from "react-icons/io";
 
 
 function LiveSeller({ isConfetti, sales }) {
@@ -19,7 +19,7 @@ function LiveSeller({ isConfetti, sales }) {
             pointerEvents: "none",
           }}
         >
-          {isConfetti ? <Lottie loop play animationData={party} /> : <></>}
+          {/* {isConfetti ? <Lottie loop play animationData={party} /> : <></>} */}
         </div>
       </div>
       <div className="w-full p-5 text-center">
@@ -31,7 +31,7 @@ function LiveSeller({ isConfetti, sales }) {
       </div>
       <div className="h-4/6">
         <div className=" m-auto w-3/4 rounded-3xl h-full">
-        <IoMdPerson className=" w-full h-full" />
+        {/* <IoMdPerson className=" w-full h-full" /> */}
 
         </div>
       </div>
